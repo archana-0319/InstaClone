@@ -13,7 +13,7 @@ const url =
 mongoose
   .connect(url)
   .then(() => {
-    console.log("Connected to the database");
+    console.log("Connected to My database");
   })
   .catch((err) => {
     console.log("Error in connection", err);
