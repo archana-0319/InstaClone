@@ -1,12 +1,12 @@
 const express = require("express");
-const post = require("../model/instaSchema");
+const posted = require("../model/instaSchema");
 const postRoute = express.Router();
 const multer = require("multer");
 const path=require('path')
 
 
 postRoute.get("/post", (req, res) => {
-  post
+  posted
     .find()
     .then((result) => {
       res.status(200).json({
@@ -40,7 +40,7 @@ const upload = multer({ storage });
 
 postRoute.post("/new", upload.single("image"), (req, res) => {
   const { name, location, likes, description } = req.body;
-  const Post = new post({
+  const Post = new posted({
     name,
     location,
     likes,
